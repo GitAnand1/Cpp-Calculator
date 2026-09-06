@@ -1,0 +1,19 @@
+# Build output
+build/
+
+# Compiled executables
+Calculator
+*.exe
+*.out
+*.app
+
+# Object files
+*.o
+*.obj
+
+# IDE files
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
