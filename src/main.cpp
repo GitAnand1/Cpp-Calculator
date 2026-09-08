@@ -23,31 +23,67 @@ double divide(double a, double b)
 
 int main()
 {
-    int choice;
-    double num1;
-    double num2;
+    int calculatorChoice;
 
     while (true)
     {
         std::cout << "\n==============================\n";
-        std::cout << "       SIMPLE CALCULATOR\n";
+        std::cout << "          CALCULATOR\n";
         std::cout << "==============================\n";
-        std::cout << "1. Addition\n";
-        std::cout << "2. Subtraction\n";
-        std::cout << "3. Multiplication\n";
-        std::cout << "4. Division\n";
-        std::cout << "5. Exit\n";
+        std::cout << "1. Basic Calculator\n";
+        std::cout << "2. Scientific Calculator\n";
+        std::cout << "3. Unit Converter\n";
+        std::cout << "4. Exit\n";
         std::cout << "Enter your choice: ";
 
-        std::cin >> choice;
+        std::cin >> calculatorChoice;
 
-        if (choice == 5)
+        if (calculatorChoice == 4)
         {
             std::cout << "Exiting calculator...\n";
             break;
         }
 
-        if (choice < 1 || choice > 5)
+        if (calculatorChoice == 2)
+        {
+            std::cout << "Scientific Calculator - Coming Soon!\n";
+            continue;
+        }
+
+        if (calculatorChoice == 3)
+        {
+            std::cout << "Unit Converter - Coming Soon!\n";
+            continue;
+        }
+
+        if (calculatorChoice != 1)
+        {
+            std::cout << "Invalid choice. Please try again.\n";
+            continue;
+        }
+
+        int operationChoice;
+        double num1;
+        double num2;
+
+        std::cout << "\n------------------------------\n";
+        std::cout << "       BASIC CALCULATOR\n";
+        std::cout << "------------------------------\n";
+        std::cout << "1. Addition\n";
+        std::cout << "2. Subtraction\n";
+        std::cout << "3. Multiplication\n";
+        std::cout << "4. Division\n";
+        std::cout << "5. Back to Calculator Menu\n";
+        std::cout << "Enter your choice: ";
+
+        std::cin >> operationChoice;
+
+        if (operationChoice == 5)
+        {
+            continue;
+        }
+
+        if (operationChoice < 1 || operationChoice > 4)
         {
             std::cout << "Invalid choice. Please try again.\n";
             continue;
@@ -59,7 +95,7 @@ int main()
         std::cout << "Enter second number: ";
         std::cin >> num2;
 
-        switch (choice)
+        switch (operationChoice)
         {
             case 1:
                 std::cout << "Result: " << add(num1, num2) << "\n";
